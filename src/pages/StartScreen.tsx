@@ -6,7 +6,11 @@ interface Props {}
 export default function StartScreen({}: Props): ReactElement {
   return (
     <>
-      <h1>hello world from start screen</h1>
+        <h1>hello world</h1>
+        <img src="landingImage.png" alt="" />
+     
+
+
     </>
   );
 }
