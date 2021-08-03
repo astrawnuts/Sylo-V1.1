@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import {Link} from "react-router-dom";
 
 interface Props {}
 
@@ -6,7 +7,8 @@ interface Props {}
 export default function Contacts({}: Props): ReactElement {
   return (
     <div>
-      <h1>hello from contacts</h1>
+      <h1 className="title">Address Book</h1>
+      <Link className="button button__blue" to="/" type="button">Disconnect</Link>
     </div>
   );
 }

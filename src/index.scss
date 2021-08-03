@@ -1,13 +1,55 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "Rawline";
+  src: local("Rawline"), url(./fonts/rawline-400.ttf) format("truetype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'Rawline Semibold';
+  src: local('Rawline Semibold'), url(./fonts/rawline-600.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+
+// everything is relative to 16px as the root height
+
+.button {
+  display: inline-flex;
+  font-family: Rawline;
+  font-size: 0.9rem;
+  width: 21rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 1.34rem;
+
+  // &__text {
+  //   display: inline-flex;
+  // }
+
+  &__blue {
+    color: #fff;
+    background-color: #4d6aa7;
+  }
+
+  &__orange {
+    color: #fff;
+
+    background-color: #f15a29;
+  }
 }
