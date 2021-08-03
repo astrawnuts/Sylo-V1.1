@@ -1,0 +1,20 @@
+.NewContact {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: Rawline;
+
+    &__error {
+        margin-top: 0.25rem;
+        color: #EE3D52;
+        font-size: 0.625rem;
+        text-align: left;
+    }
+}
+
+.input {
+    margin-top: 1rem;
+}
+
+.button {
+    margin-top: 1.625rem;
+}
