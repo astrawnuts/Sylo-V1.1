@@ -3,6 +3,7 @@ import React from "react";
 import "./App.scss";
 import StartScreen from "./pages/StartScreen/StartScreen";
 import Contacts from "./pages/Contacts/Contacts";
+import NewContacts from "./pages/NewContact/NewContact";
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,8 +24,8 @@ function App() {
           <Route path="/contacts">
            <Contacts />
           </Route>
-          <Route path="/hello">
-            <h2>hi from hello</h2>
+          <Route path="/newcontact">
+          <NewContacts />
           </Route>
         </Switch>
       </div>

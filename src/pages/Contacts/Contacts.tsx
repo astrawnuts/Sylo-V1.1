@@ -1,60 +1,86 @@
 import React, { ReactElement } from "react";
-import {Link} from "react-router-dom";
-import "./Contacts.scss";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"; import "./Contacts.scss";
 import PreviousPage from "../../components/PreviousPage/PreviousPage";
 import Contact from "../../components/Contact/Contact";
 
-interface Props {}
+interface Props { }
 
 interface Person {
-  name: string, 
+  name: string,
   etherID: string,
 }
 
 // To handle all things contacts related
-export default function Contacts({}: Props): ReactElement {
+export default function Contacts({ }: Props): ReactElement {
 
   //initialising an empty people array of type Person
-  const people:Person[] = [];
-
+  const [people, setpeople] = React.useState<Person[]>([]);
 
   //first check if there are any people in local storage
-  const storedPeople:string = JSON.parse(localStorage.getItem("people") || '{}');
+  const storedPeople: Person[] = JSON.parse(localStorage.getItem("people") || 'null');
 
-  //if there are you need to loop over them and draw them in the view
+  //if people are in the local storage then set the values from localstorage
+  React.useEffect(() => {
+    if (storedPeople) {
+      setpeople(people => storedPeople);
+    }
+  }, []);
 
-  //else show a message like no contacts in database
+  function returnPerson(person: Person, index: number) {
+    if (people.length == 0) {
+      return <div>No contacts stored. Add new contacts to see them here.</div>
+    } else {
+      return <Contact key={index} name={person.name} />
+    }
+  }
+
 
   //allow person to create new contacts and store them to local storage
 
- 
-  people[0] = { 
-    name:"Tom", 
-    etherID:"Hanks" 
- }; 
 
- people[1] = { 
-  name:"Bill", 
-  etherID:"Trainer" 
-}; 
+  // people[0] = {
+  //   name: "Tom",
+  //   etherID: "Hanks"
+  // };
+
+  // people[1] = {
+  //   name: "Bill",
+  //   etherID: "Trainer"
+  // };
 
 
- localStorage.setItem("people", JSON.stringify(people));
+  // localStorage.setItem("people", JSON.stringify(people));
 
 
 
   return (
-    <div>
-      <div>
-     
-        <PreviousPage HeaderTitle="Address Book" to="/" />
 
-        <Contact name="Steve Bronson" />
-        <Contact name="Steve Jobs" />
-        <Contact name="Harrison Ford Lettuce" />
-        <Contact name="Harriot Turner" />
+      <div>
+        <div>
+
+          <PreviousPage HeaderTitle="Address Book" to="/" />
+          <Contact addButton name="New Contact" />
+
+
+          {/* if their are people in local storage render them */}
+          {people.length != 0 && people.map((person, index) => {
+            return returnPerson(person, index)
+          })}
+
+          {/* if there are no people in local storage then display message */}
+          {people.length == 0 && <div>No contacts stored. Add new contacts to see them here.</div>
+          }
+
+        </div>
+        <Link className="button button__blue" to="/" type="button">Disconnect</Link>
+
+
       </div>
-      <Link className="button button__blue" to="/" type="button">Disconnect</Link>
-    </div>
+  
   );
 }

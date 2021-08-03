@@ -31,7 +31,25 @@
         font-family: Rawline Semibold;
         margin-right: 1rem;
     }
+
+    &__plus {
+        border-radius: 99%;
+        width: 3.375rem;
+        height: 3.375rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9375rem;
+        margin-right: 1rem;
+    }
+
+
     &__name {
         color: black;
+        text-decoration: none;
+    }
+
+    &--alternative-text {
+        color: #495162;
     }
 }
