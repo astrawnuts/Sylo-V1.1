@@ -1,8 +1,8 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "./App.scss";
-import StartScreen from "./pages/StartScreen";
-import Contacts from "./pages/Contacts";
+import StartScreen from "./pages/StartScreen/StartScreen";
+import Contacts from "./pages/Contacts/Contacts";
 import {
   BrowserRouter as Router,
   Switch,

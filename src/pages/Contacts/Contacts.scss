@@ -1,0 +1,19 @@
+.contacts {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    &__title {
+        font-size: 1.125rem;
+        font-family: Rawline;
+        color: #495162;     
+        text-transform: capitalize;
+    }
+
+ 
+}
