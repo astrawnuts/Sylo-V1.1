@@ -68,13 +68,9 @@ export default function NewContact({ }: Props): ReactElement {
         }
     }
 
-    function saveContact(event: any, index: number) {
-        // event.preventDefault();
-        if(index <= 0) {
-            return;
-        } else {
-            index = index - 1;
-        }
+    function saveContact(event: any) {
+        event.preventDefault();
+     
         if (form_name != '' && form_EthID != '') {
             if (storedPeople) {
                 storedPeople[storedPeople.length] = { name: form_name, etherID: form_EthID }
@@ -93,15 +89,9 @@ export default function NewContact({ }: Props): ReactElement {
             }
 
             }
-           
-            // localStorage.setItem("people", JSON.stringify(people));
-            // if(!localStorage.getItem("people")) {
-            //     localStorage.setItem("people", JSON.stringify("{}"));
-            // }
-            
+                      
             localStorage.setItem("people", JSON.stringify(storedPeople));
 
-            // saveContact(event, index);
         }
     
 
@@ -118,7 +108,7 @@ export default function NewContact({ }: Props): ReactElement {
                 <input type="text" className="input" placeholder="Ethereum address" onChange={e => handleEthChange(e)} />
                 <p className="NewContact__error">Please enter a valid Ethereum address</p>
 
-                <Link to="#" type="button" className="button button__orange" onClick={ (Event) => saveContact(Event, 2) }>Save</Link>
+                <Link to="#" type="button" className="button button__orange" onClick={ (Event) => saveContact(Event) }>Save</Link>
             </form>
         </div>
 
