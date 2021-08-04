@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom"; import "./Contacts.scss";
+} from "react-router-dom";
+import "./Contacts.scss";
 import PreviousPage from "../../components/PreviousPage/PreviousPage";
 import Contact from "../../components/Contact/Contact";
 

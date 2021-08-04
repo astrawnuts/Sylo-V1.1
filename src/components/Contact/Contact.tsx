@@ -12,7 +12,12 @@ export default function Contact({ name, addButton }: ContactProps): ReactElement
 
 
     function getPhotoName({ name }: ContactProps) {
-        const myArr = name.split(" ");
+        let myArr; 
+        try {
+            myArr = name.split(" ");
+        } catch {
+            return;
+        }
         let str: string = "";
         myArr.forEach(element => {
             str += element.substring(0, 1).toUpperCase() + " ";
