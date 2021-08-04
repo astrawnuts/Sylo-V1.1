@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 
 interface ContactProps {
+    ID?: number,
     name: String,
     addButton?: boolean,
 }
 
-export default function Contact({ name, addButton }: ContactProps): ReactElement {
-
+export default function Contact({ name, addButton, ID }: ContactProps): ReactElement {
 
     function getPhotoName({ name }: ContactProps) {
         let myArr; 
@@ -44,12 +44,16 @@ export default function Contact({ name, addButton }: ContactProps): ReactElement
 
             }
 
-            {addButton == undefined && <div className="contact">
-                <div className="contact__row">
-                    <div className="contact__photo">{getPhotoName({ name })}</div>
-                    <div className="contact__name">{name}</div>
+            {addButton == undefined && 
+            <Link to={'/sendmoney/' + ID} >
+                <div className="contact">
+                    <div className="contact__row">
+                        <div className="contact__photo">{getPhotoName({ name })}</div>
+                        <div className="contact__name">{name}</div>
+                    </div>
                 </div>
-            </div>}
+            </Link>
+            }
         </>
     )
 }

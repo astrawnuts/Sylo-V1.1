@@ -1,0 +1,39 @@
+.profile {
+    &__photo {
+        color: #fff;
+        background: #8a96aa;
+        border-radius: 99%;
+        width: 7rem;
+        height: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.875rem;
+        font-family: Rawline Semibold;
+        margin: auto;
+        margin-top: 2.5rem;
+    }
+
+    &__eth {
+        color: #4D6AA7;
+        font-size: calc(12px/16px)rem;
+        
+        margin: auto;
+        margin-top: 1.625rem;
+        text-align: center;
+    }
+
+    &__textbox {
+        margin-top: 1.625rem;
+    }
+
+    &__fee {
+        margin-top: 1.125rem;
+        color: #4D6AA7;
+        font-size: calc(12px/16px)rem;
+    }
+
+    &__send {
+        margin-top: 2.6875rem;
+    }
+}

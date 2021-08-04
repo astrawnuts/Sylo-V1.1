@@ -18,6 +18,7 @@ interface Person {
 
 // To handle all things contacts related
 export default function Contacts({ }: Props): ReactElement {
+  let counter:number = 0;
 
   //initialising an empty people array of type Person
   const [people, setpeople] = React.useState<Person[]>([]);
@@ -32,31 +33,13 @@ export default function Contacts({ }: Props): ReactElement {
     }
   }, []);
 
-  function returnPerson(person: Person, index: number) {
+  function returnPerson(person: Person, index: number, num: number) {
     if (people.length == 0) {
       return <div>No contacts stored. Add new contacts to see them here.</div>
     } else {
-      return <Contact key={index} name={person.name} />
+      return <Contact ID={num} key={index} name={person.name} />
     }
   }
-
-
-  //allow person to create new contacts and store them to local storage
-
-
-  // people[0] = {
-  //   name: "Tom",
-  //   etherID: "Hanks"
-  // };
-
-  // people[1] = {
-  //   name: "Bill",
-  //   etherID: "Trainer"
-  // };
-
-
-  // localStorage.setItem("people", JSON.stringify(people));
-
 
 
   return (
@@ -70,7 +53,8 @@ export default function Contacts({ }: Props): ReactElement {
 
           {/* if their are people in local storage render them */}
           {people.length != 0 && people.map((person, index) => {
-            return returnPerson(person, index)
+            
+            return returnPerson(person, index, counter++)
           })}
 
           {/* if there are no people in local storage then display message */}

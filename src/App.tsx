@@ -4,6 +4,9 @@ import "./App.scss";
 import StartScreen from "./pages/StartScreen/StartScreen";
 import Contacts from "./pages/Contacts/Contacts";
 import NewContacts from "./pages/NewContact/NewContact";
+
+import SendMoney from "./pages/SendMoney/SendMoney";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,17 +18,21 @@ function App() {
   return (
     <Router>
       <div className="App">
- 
+
 
         <Switch>
           <Route exact path="/">
             <StartScreen />
           </Route>
           <Route path="/contacts">
-           <Contacts />
+            <Contacts />
           </Route>
           <Route path="/newcontact">
-          <NewContacts />
+            <NewContacts />
+          </Route>
+
+          <Route path="/sendmoney/:id" >
+            <SendMoney />
           </Route>
         </Switch>
       </div>

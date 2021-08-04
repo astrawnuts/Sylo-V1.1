@@ -1,23 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 @font-face {
   font-family: "Rawline";
   src: local("Rawline"), url(./fonts/rawline-400.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+  'embedded-opentype', and 'svg' */
 }
 
 @font-face {
   font-family: 'Rawline Semibold';
   src: local('Rawline Semibold'), url(./fonts/rawline-600.ttf) format('truetype');
   /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+  'embedded-opentype', and 'svg' */
+}
+
+body {
+  margin: 0;
+  font-family: Rawline, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {
@@ -57,7 +58,7 @@ code {
 
 .input {
   
-  font-family: Rawline;
+  font-family: Rawline Semibold;
   font-size: 0.9rem;
   width: 21rem;
   height: 2.75rem;
