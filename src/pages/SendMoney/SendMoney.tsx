@@ -16,12 +16,12 @@ interface Props {
 interface Person {
     name: string,
     etherID: string,
-  }
+}
 
 export default function SendMoney({ }: Props): ReactElement {
 
     function getPhotoName({ name }: Person) {
-        let myArr; 
+        let myArr;
         try {
             myArr = name.split(" ");
         } catch {
@@ -36,9 +36,17 @@ export default function SendMoney({ }: Props): ReactElement {
 
     }
 
+    function SendClickHandler() {
+        //Will Start the metamask extension
+        // if (typeof window.ethereum: any !== 'undefined') {
+        //     console.log('MetaMask is installed!');
+        // }
+        // ethereum.request({ method: 'eth_requestAccounts' });
+    }
 
-  //first check if there are any people in local storage
-  const storedPeople: Person[] = JSON.parse(localStorage.getItem("people") || 'null');
+
+    //first check if there are any people in local storage
+    const storedPeople: Person[] = JSON.parse(localStorage.getItem("people") || 'null');
 
 
 
@@ -48,13 +56,13 @@ export default function SendMoney({ }: Props): ReactElement {
     return (
         <div>
             <PreviousPage HeaderTitle={'Send to ' + storedPeople[parseInt(id)].name} to="/contacts" />
-            
+
             <div className="profile__photo">{getPhotoName(storedPeople[parseInt(id)])}</div>
             <div className="profile__eth">{storedPeople[parseInt(id)].etherID}</div>
             <input className="input" type="text" placeholder="0 ETH" />
             <div className="profile__fee">Tx fee: 0.00021 ETH $0.53</div>
 
-            <a href="#" type="button" className="button button__orange profile__send">Send</a>
+            <a href="#" onClick={() => SendClickHandler()} type="button" className="button button__orange profile__send">Send</a>
 
         </div>
     )
